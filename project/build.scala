@@ -22,7 +22,7 @@ object Settings {
     libraryDependencies ++= Seq(
       "com.badlogicgames.gdx" % "gdx" % libgdxVersion.value,
         "com.badlogicgames.gdx" % "gdx-box2d" % libgdxVersion.value,
-      "org.scala-lang" % "scala-reflect" % "2.11.8"
+        "org.scala-lang" % "scala-reflect" % "2.11.8"
     ),
     javacOptions ++= Seq(
       "-Xlint",
@@ -51,7 +51,8 @@ object Settings {
     libraryDependencies ++= Seq(
       "net.sf.proguard" % "proguard-base" % "5.2.1" % "provided",
       "com.badlogicgames.gdx" % "gdx-backend-lwjgl" % libgdxVersion.value,
-      "com.badlogicgames.gdx" % "gdx-platform" % libgdxVersion.value classifier "natives-desktop"
+      "com.badlogicgames.gdx" % "gdx-platform" % libgdxVersion.value classifier "natives-desktop",
+        "com.badlogicgames.gdx" % "gdx-box2d-platform" % libgdxVersion.value classifier "natives-desktop"
     ),
     fork in Compile := true,
     unmanagedResourceDirectories in Compile += file("android/assets"),
