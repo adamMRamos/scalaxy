@@ -21,6 +21,7 @@ object Settings {
     scalaVersion := (scalaVersion in LocalProject("all-platforms")).value,
     libraryDependencies ++= Seq(
       "com.badlogicgames.gdx" % "gdx" % libgdxVersion.value,
+        "com.badlogicgames.gdx" % "gdx-box2d" % libgdxVersion.value,
       "org.scala-lang" % "scala-reflect" % "2.11.8"
     ),
     javacOptions ++= Seq(
