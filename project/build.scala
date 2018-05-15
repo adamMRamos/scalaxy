@@ -72,7 +72,7 @@ object Settings {
       ("natives-armeabi-v7a.jar", new ExactFilter("libgdx.so"), base / "libs" / "armeabi-v7a"),
       ("natives-x86.jar", new ExactFilter("libgdx.so"), base / "libs" / "x86")
     )},
-    platformTarget in Android := "android-21",
+    platformTarget in Android := "android-26",
     proguardOptions in Android ++= scala.io.Source.fromFile(file("core/proguard-project.txt")).getLines.toList ++
                                    scala.io.Source.fromFile(file("android/proguard-project.txt")).getLines.toList
   )
