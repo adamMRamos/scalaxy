@@ -20,7 +20,9 @@ class GameScreen(scalaxy: Scalaxy) extends Screen {
     private val camera: OrthographicCamera = new OrthographicCamera()
     this.camera.setToOrtho(false, 800, 480)
 
-    private val rect = new Rectangle()
+    val shape = new PolygonShape()
+    shape.setAsBox(20f, 20f)
+    BodyFactory.makeFixtureDefinition(BodyFactory.RUBBER, shape)
 
     override def resume(): Unit = {}
     override def show(): Unit = {}
@@ -33,20 +35,20 @@ class GameScreen(scalaxy: Scalaxy) extends Screen {
         Gdx.gl.glClearColor(0f, 0f, 0f, 1)
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT)
 
-        scalaxy.batch.setProjectionMatrix(this.camera.combined)
-        scalaxy.batch.begin()
+//        scalaxy.batch.setProjectionMatrix(this.camera.combined)
+//        scalaxy.batch.begin()
 //        scalaxy.batch.draw(this.img, 0, 20)
         debugRenderer.render(this.world, this.camera.combined)
         this.world.step(delta, 3, 3)
         this.camera.update()
 
-        scalaxy.batch.end()
+//        scalaxy.batch.end()
     }
 
     private def createObject(): Body = {
         val bodyDef: BodyDef = new BodyDef()
         bodyDef.`type` = BodyDef.BodyType.DynamicBody
-        bodyDef.position.set(400,400)
+        bodyDef.position.set(120,400)
 
         val dynamicBody = this.world.createBody(bodyDef)
 
