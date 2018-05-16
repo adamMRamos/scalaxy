@@ -17,10 +17,10 @@ class Scalaxy extends Game {
 
     override def create() {
         this.batch = new SpriteBatch
-        this.img = new Texture("badlogic.jpg")
-        this.camera = new OrthographicCamera(32, 24)
-        this.debugRenderer = new Box2DDebugRenderer(true, true, true, true, true, true)
-        this.world = new World(new Vector2(0,-10f), true)
+//        this.img = new Texture("badlogic.jpg")
+//        this.camera = new OrthographicCamera(32, 24)
+//        this.debugRenderer = new Box2DDebugRenderer(true, true, true, true, true, true)
+//        this.world = new World(new Vector2(0,-10f), true)
 
         this.setScreen(new GameScreen(this))
     }
@@ -34,8 +34,8 @@ class Scalaxy extends Game {
 
     override def dispose() {
         this.batch.dispose()
-        this.img.dispose()
-        this.debugRenderer.dispose()
-        this.world.dispose()
+//        this.img.dispose()
+//        this.debugRenderer.dispose()
+//        this.world.dispose()
     }
 }
